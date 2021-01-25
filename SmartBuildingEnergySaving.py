@@ -10,6 +10,7 @@ import dash_bootstrap_components as dbc
 from datetime import date
 import sys
 import datetime
+import os
 
 app = dash.Dash(__name__)
 app = dash.Dash(
@@ -20,7 +21,7 @@ app = dash.Dash(
 )
 app.config['suppress_callback_exceptions'] = True
 
-CO2_SAVED_FINAL = pd.read_csv("C:\\Users\\Silina\\Desktop\\DonkeysAreUs\\C02_SAVED_FINAL_BY_USING_LESSER_ENERGY.rpt")
+CO2_SAVED_FINAL = pd.read_csv(os.path.join(os.getcwd(),"C02_SAVED_FINAL_BY_USING_LESSER_ENERGY.rpt"))
 
 sidebar_header = dbc.Row(
     [
